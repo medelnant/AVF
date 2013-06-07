@@ -1,42 +1,48 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+<!-- ##############################################
+Author: Michael Edelnant
+Course: AVF 1306 | Week 1
+Instructor: Jennifer McCarrick
+############################################## -->
 
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/app.css" />
+        <title>Michael Edelnant | AVF 1306</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
+        <section class="appWrapper">
+            <header>
+                <section>
+                    <a href="#" class="ico home left"></a>
+                    <a href="#" class="ico settings right"></a>
+                    <div id="avatar"><span></span></div>
+                </section>
+            </header>
+            <section class="appTitleMastHead">
+                <h1>Michael Edelnant | AVF 1306</h1>
+            </section>              
+            <section class="contentBody">              
+                <ul>
+                    <li><a class="ico video" href="#">Video</a></li>
+                    <li><a class="ico twitter" href="#">Twitter</a></li>
+                    <li><a class="ico espn" href="#">ESPN</a></li>
+                    <li><a class="ico camera" href="#">Camera</a></li>
+                    <li><a class="ico accelerometer" href="#">Accelerometer</a></li>
+                    <li><a class="ico compass" href="#">Compass</a></li>
+                    <li><a class="ico geolocation" href="#">Geolocation</a></li>
+                    <li><a class="ico research" href="#">Research</a></li>
+                </ul>
+            </section>
+            <footer>
+            </footer>
+            
+        </section>
         <script type="text/javascript" src="cordova-2.7.0.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
+        <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
     </body>
 </html>
