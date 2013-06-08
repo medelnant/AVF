@@ -41,13 +41,14 @@ a:link,
 a:visited {color: #fff;}
 
 header {
-    background: -moz-linear-gradient(top,  rgba(44,83,158,0) 0%, rgba(24,38,89,0.75) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(44,83,158,0)), color-stop(100%,rgba(24,38,89,0.75))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  rgba(44,83,158,0) 0%,rgba(24,38,89,0.75) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  rgba(44,83,158,0) 0%,rgba(24,38,89,0.75) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  rgba(44,83,158,0) 0%,rgba(24,38,89,0.75) 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  rgba(44,83,158,0) 0%,rgba(24,38,89,0.75) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002c539e', endColorstr='#bf182659',GradientType=0 ); /* IE6-9 */
+background: rgb(40,67,102); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(40,67,102,1) 0%, rgba(26,29,58,1) 94%, rgba(40,67,102,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(40,67,102,1)), color-stop(94%,rgba(26,29,58,1)), color-stop(100%,rgba(40,67,102,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(40,67,102,1) 0%,rgba(26,29,58,1) 94%,rgba(40,67,102,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(40,67,102,1) 0%,rgba(26,29,58,1) 94%,rgba(40,67,102,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(40,67,102,1) 0%,rgba(26,29,58,1) 94%,rgba(40,67,102,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(40,67,102,1) 0%,rgba(26,29,58,1) 94%,rgba(40,67,102,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#284366', endColorstr='#284366',GradientType=0 ); /* IE6-9 */
 
     height: 75px;
     border-bottom: 5px solid rgba(242,83,46,0);
@@ -188,12 +189,6 @@ header section a.ico.right {
 header section a.ico:before {
     margin: 0;
 }
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    background: red;
-    
-}
-
 
 @keyframes fade {
     from { opacity: 1.0; }
@@ -210,4 +205,37 @@ header section a.ico:before {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+
+
+
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-width: 1024px) {
+    .contentBody ul {
+        overflow: hidden;
+        padding: 1% 0 0 0;
+    }
+    .contentBody ul li {
+        float: left;
+        width: 32%;
+        background: rgb(242,245,246); /* Old browsers */
+        background: -moz-linear-gradient(top,  rgba(242,245,246,1) 0%, rgba(227,234,237,1) 37%, rgba(200,215,220,1) 95%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,245,246,1)), color-stop(37%,rgba(227,234,237,1)), color-stop(95%,rgba(200,215,220,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,rgba(200,215,220,1) 95%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,rgba(200,215,220,1) 95%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,rgba(200,215,220,1) 95%,rgba(255,255,255,1) 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,rgba(200,215,220,1) 95%,rgba(255,255,255,1) 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+        border: 1px solid #000;
+        margin: 0 0 1% .9%;
+        box-shadow: 0 0 10px rgba(0,0,0,.5);
+    }
+    .contentBody ul li a {
+        display: block;
+        height: auto;
+        width: auto;
+        padding: 2% 5% 2% 5%;
+    }
 }
