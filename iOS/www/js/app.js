@@ -8,3 +8,11 @@ var toBeDetermined = function() {
 	/* Make it rain */
 }
 
+$(document).ready(function() {
+  
+  // $('.contentBody ul li a').on('click', function(){
+  // 	$('.contentBody ul').hide();
+
+  // });
+
+});

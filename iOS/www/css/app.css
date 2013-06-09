@@ -32,13 +32,35 @@ body {
     font-size:12px;
     height:100%;
     margin:0px;
-    padding: 80px 0 0 0px;
+    padding: 72px 0 0 0px;
     width:100%;
 }
 
 a,
 a:link,
 a:visited {color: #fff;}
+
+/*ICO Sprites*/
+.ico:before {
+    content:'';
+    height: 35px;
+    width: 35px;
+    float: left;
+    margin: 0 10px 0 0;
+    background: url(../img/iconSprite.png);
+}
+
+.ico.home:before {background-position: 315px -8px;}
+.ico.settings:before {background-position: 270px -8px;}
+.ico.video:before {background-position: 225px -8px;}
+.ico.twitter:before {background-position: 180px -8px;}
+.ico.espn:before {background-position: 135px -8px;}
+.ico.camera:before {background-position: 270px -54px;}
+.ico.accelerometer:before {background-position: 225px -53px;}
+.ico.compass:before {background-position: 315px -53px;}
+.ico.geolocation:before {background-position: 90px -10px;}
+.ico.research:before {background-position: 45px -8px;}
+
 
 header {
 background: rgb(40,67,102); /* Old browsers */
@@ -50,8 +72,11 @@ background: -ms-linear-gradient(top,  rgba(40,67,102,1) 0%,rgba(26,29,58,1) 94%,
 background: linear-gradient(to bottom,  rgba(40,67,102,1) 0%,rgba(26,29,58,1) 94%,rgba(40,67,102,1) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#284366', endColorstr='#284366',GradientType=0 ); /* IE6-9 */
 
-    height: 75px;
+    height: 65px;
     border-bottom: 5px solid rgba(242,83,46,0);
+    box-shadow: 0 1px 0 rgba(255,48,0,1),
+                0 5px 10px rgba(0,0,0,.5);
+    border-top: 2px solid #000;
     position: fixed;
     top: 0;
     width: 100%;
@@ -61,6 +86,10 @@ header section {
     height: 100%;
     border-bottom: 1px solid rgba(255,48,0,1);
     text-align: center;
+}
+header section a {margin: -8px 0 0 0;}
+header section a.ico:before {
+    background-image : url(../img/icons_inverse.png);
 }
 
 header section div#avatar {
@@ -90,19 +119,17 @@ header section div#avatar span {
 }
 
 section.appTitleMastHead {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    background: rgba(255,255,255,.25);
+    box-shadow: inset 0 7px 4px rgba(0,0,0,.25);
 }
 
 section.appTitleMastHead h1{
-    border-top: 1px solid rgba(255,48,0,1);
+    font-size: 1.35em;    
     text-align: center;
-    text-shadow: 0 0 10px rgba(43,68,120,1);
-    color: rgba(255,255,255,1);
-    font-weight: normal;
-    font-size: 2em;
     margin: 0;
     padding: 50px 0 10px 0;
-    border-bottom: 1px solid rgba(255,48,0,1);
+    border-bottom: 1px solid rgba(255,255,255,.55);
     box-shadow: 0 2px 0px rgba(0,0,0,.5);
     background: -moz-linear-gradient(top,  rgba(24,38,89,0.75) 0%, rgba(44,83,158,0) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(24,38,89,0.75)), color-stop(100%,rgba(44,83,158,0))); /* Chrome,Safari4+ */
@@ -111,7 +138,16 @@ section.appTitleMastHead h1{
     background: -ms-linear-gradient(top,  rgba(24,38,89,0.75) 0%,rgba(44,83,158,0) 100%); /* IE10+ */
     background: linear-gradient(to bottom,  rgba(24,38,89,0.75) 0%,rgba(44,83,158,0) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf182659', endColorstr='#002c539e',GradientType=0 ); /* IE6-9 */
-
+}
+section.appTitleMastHead h1 span {
+    background: rgba(34,52,86,.25);
+    box-shadow: 0 -1px 1px rgba(0,0,0,.5),
+                0 1px 0 rgba(255,255,255,.5);
+    padding: 3px 2.5%;
+    border-radius: 45px;
+    color: rgba(255,255,255,1);
+    font-weight: normal;
+    text-shadow:    0 -1px 0 rgba(0,0,0, 0.75)    
 }
 
 .contentBody {
@@ -135,9 +171,19 @@ section.appTitleMastHead h1{
 }
 .contentBody ul li {
     display: block;
-    border-bottom: 1px solid rgba(255,255,255,.15);
+    border-bottom: 1px solid rgba(255,255,255,.45);
     box-shadow: 0 2px 0px rgba(0,0,0,.5);
+    background: -moz-linear-gradient(top,  rgba(2,0,76,0.32) 0%, rgba(2,0,59,0) 23%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(2,0,76,0.32)), color-stop(23%,rgba(2,0,59,0)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(2,0,76,0.32) 0%,rgba(2,0,59,0) 23%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(2,0,76,0.32) 0%,rgba(2,0,59,0) 23%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(2,0,76,0.32) 0%,rgba(2,0,59,0) 23%,rgba(0,0,0,0) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(2,0,76,0.32) 0%,rgba(2,0,59,0) 23%,rgba(0,0,0,0) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5202004c', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+
 }
+.contentBody ul li:first-child {background: none;}
+.contentBody ul li:last-child {border-bottom: none; box-shadow: none;}
 .contentBody ul li a {
     display: block;
     font-family: 'Quicksand', sans-serif;
@@ -149,29 +195,6 @@ section.appTitleMastHead h1{
     text-shadow: 0 0 10px rgba(43,68,120,1);
     text-transform: uppercase;
 }
-
-
-/*ICO Sprites*/
-.ico:before {
-    content:'';
-    height: 35px;
-    width: 35px;
-    float: left;
-    margin: 0 10px 0 0;
-    background: url(../img/iconSprite.png);
-}
-
-.ico.home:before {background-position: 315px -8px;}
-.ico.settings:before {background-position: 270px -8px;}
-.ico.video:before {background-position: 225px -8px;}
-.ico.twitter:before {background-position: 180px -8px;}
-.ico.espn:before {background-position: 135px -8px;}
-.ico.camera:before {background-position: 270px -54px;}
-.ico.accelerometer:before {background-position: 225px -53px;}
-.ico.compass:before {background-position: 315px -53px;}
-.ico.geolocation:before {background-position: 90px -10px;}
-.ico.research:before {background-position: 45px -8px;}
-
 
 header section a.ico.left {
     display: block;
@@ -216,7 +239,9 @@ header section a.ico:before {
         overflow: hidden;
         padding: 1% 0 0 0;
     }
-    .contentBody ul li {
+    .contentBody ul li,
+    .contentBody ul li:first-child,
+    .contentBody ul li:last-child {
         float: left;
         width: 32%;
         background: rgb(242,245,246); /* Old browsers */
@@ -231,11 +256,26 @@ header section a.ico:before {
         border: 1px solid #000;
         margin: 0 0 1% .9%;
         box-shadow: 0 0 10px rgba(0,0,0,.5);
+        padding: 0 0 10px 0;
     }
     .contentBody ul li a {
         display: block;
         height: auto;
         width: auto;
-        padding: 2% 5% 2% 5%;
+        padding: 2% 5% 0% 2%;
+        text-shadow: 0 2px 0 rgba(255,255,255,1);
+        color: #455B6B;
+        border-bottom: 1px solid rgba(69, 91, 107, .35);
+        box-shadow: 
+                   
+                    0 1px 0 rgba(255,255,255,.5),
+                    0 2px 0 rgba(69, 91, 107, .35),
+                    0 3px 0 rgba(255,255,255,.5),
+                    0 4px 0 rgba(69, 91, 107, .35),
+                    0 3px 0 rgba(255,255,255,1);
+        margin: 0 2%;
+    }
+    .contentBody ul li a.ico:before {
+        background-image: url(../img/iconSprite_subtle_inverse.png);
     }
 }
