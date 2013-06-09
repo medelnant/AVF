@@ -111,7 +111,7 @@ header section div#avatar span {
     display: block;
     height: 96px;
     width: 96px;
-    background: url(../img/avatar.jpg) center center no-repeat;
+    background: url(../img/avatar2.jpg) center center no-repeat;
     background-size: cover; 
     border-radius: 150px; 
     border: 2px solid rgba(0,0,0,1);
@@ -235,6 +235,9 @@ header section a.ico:before {
 
 /* iPads (landscape) ----------- */
 @media only screen and (min-width: 1024px) {
+    header section div#avatar span {
+        background-image: url(../img/avatar.jpg);
+    }
     .contentBody ul {
         overflow: hidden;
         padding: 1% 0 0 0;
