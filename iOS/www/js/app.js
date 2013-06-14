@@ -27,7 +27,7 @@ $(document).ready(function() {
 					'<div class="scrim"></div>' +
 					'<section class="page" id="instagram">' +
 						'<section class="appTitleMastHead">' +
-							'<h1><span>"SearsTower" Tagged Photos</spam></h1>' +
+							'<h1><span>"SearsTower" Tagged Photos on Instagram</span></h1>' +
 						'</section>' +
 						'<ul class="gridContainer"></ul>' +                            
 					'</section>'
@@ -48,7 +48,7 @@ $(document).ready(function() {
 											'<img src="' + item.images.thumbnail.url + '" alt="'+ item.caption.text +'" />' +
 											'<i>'+ item.likes.count +'  ♥ </i>' +
 											'<span>' +
-												'<a href="http://www.instagram.com/'+ item.user.username +'" target="_blank">' +
+												'<a href="http://www.instagram.com/'+ item.user.username +'" target="_system">' +
 													'<strong>'+ item.user.username +'<strong></span>' +
 												'</a>' +
 										'</div>' +
@@ -67,7 +67,7 @@ $(document).ready(function() {
 					'<div class="scrim"></div>' +
 					'<section class="page" id="espnNews">' +
 						'<section class="appTitleMastHead">' +
-							'<h1><span>ESPN Chicago Blackhawks News</spam></h1>' +
+							'<h1><span>ESPN Chicago Blackhawk News</span></h1>' +
 						'</section>' +
 						'<ul class="listContainer"></ul>' +                            
 					'</section>'
@@ -89,6 +89,9 @@ $(document).ready(function() {
 								'<li>' +
 									'<h4>' + story.headline + '</h4>' +
 									'<p>' + story.description + '</p>' +
+									'<a href="'+ story.links.web +'" class="more" target="_blank">' +
+										'Read More' +
+									'</a>' +
 								'</li>'
 							).appendTo($('#espnNews .listContainer'));
 						});				
@@ -109,9 +112,6 @@ $(document).ready(function() {
 				default:
 		  		// code to be executed if n is different from case 1 and 2
 		}
-
-	
-
 
 	});
 
