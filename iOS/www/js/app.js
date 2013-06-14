@@ -4,10 +4,6 @@ Course: AVF 1306 | Week 1
 Instructor: Jennifer McCarrick
 ############################################## */
 
-var toBeDetermined = function() {
-	/* Make it rain */
-}
-
 
 // http://api.espn.com/v1/sports/basketball/nba/news/headlines?_accept=text/xml&limit=5&apikey=:yourkey
 
@@ -25,7 +21,44 @@ $(document).ready(function() {
 		switch($(this).attr("data-section")) {
 			case "video":
 				break;
-			case "twitter":
+			case "instagram":
+				$('#launchPage').addClass('inactive');
+				$('' +
+					'<div class="scrim"></div>' +
+					'<section class="page" id="instagram">' +
+						'<section class="appTitleMastHead">' +
+							'<h1><span>"SearsTower" Tagged Photos</spam></h1>' +
+						'</section>' +
+						'<ul class="gridContainer"></ul>' +                            
+					'</section>'
+				).appendTo(appWrapper)
+
+				$.ajax({
+					url: "https://api.instagram.com/v1/tags/searstower/media/recent?callback=&amp=&client_id=c4bbe8fde6634c99840a3a1249435e91",
+					dataType: "jsonp",
+					success: function(dataObj) {
+						// console.log(dataObj.data)
+						$.each(dataObj.data, function(index, item) {
+							console.log(item);
+							console.log("------")
+							$('' +
+								'<li>' +
+									'<article>' +
+										'<div>' +
+											'<img src="' + item.images.thumbnail.url + '" alt="'+ item.caption.text +'" />' +
+											'<i>'+ item.likes.count +'  ♥ </i>' +
+											'<span>' +
+												'<a href="http://www.instagram.com/'+ item.user.username +'" target="_blank">' +
+													'<strong>'+ item.user.username +'<strong></span>' +
+												'</a>' +
+										'</div>' +
+									'</article>' +
+								'</li>'
+							).appendTo($('#instagram .gridContainer'));
+						});												
+					}
+				});
+
 			  	break;
 			case "espn":
 			  	//alert('espn!')

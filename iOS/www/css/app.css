@@ -60,7 +60,7 @@ a:visited {color: #fff;}
 .scrim {
     height: 100%;
     width: 100%;
-    background: rgba(0,0,0,.65);
+    background: rgba(27,30,59,.85);
     position: fixed;
 
 }
@@ -258,7 +258,127 @@ header section a.ico:before {margin: 0;}
     -webkit-animation:fade 3000ms infinite;
 }
 
+#launchPage.inactive {
+    position: fixed;
+    width: 100%;
+    -webkit-filter: grayscale(0.5) blur(5px);
+}
+.page {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    top: 72px;
+    left: 0;
+    z-index: 1;
+}
 
+.page .listContainer {
+    margin: 0;
+    padding: .75% 10px 0 10px;
+    list-style: none;
+}
+
+.page .listContainer li {
+    background: rgba(0,0,0,.25);
+    border: 1px solid #000;
+    margin-bottom: 5px;
+    color: #000;
+    padding: 10px;
+}
+
+.page .listContainer li h4 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ccc;
+    font-size: 1.15em;
+    margin: 0 0 5px 0;
+    padding: 0;
+    color: #fff;
+}
+.page .listContainer li p {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, verdana, sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+    color: #fff;
+}
+
+.page .gridContainer {
+    margin: 0;
+    padding: 2% 2% 0 2%;
+    overflow: hidden;
+    list-style: none;
+}
+
+.page .gridContainer li  {
+    float: left;
+    width: 50%;
+    position: relative;
+    padding: 0;
+}
+.page .gridContainer li article {
+    padding: 4%;
+    position: relative;
+}
+.page .gridContainer li article div {
+    position: relative;
+}
+
+.page .gridContainer article div img {
+    box-shadow: 0 0 5px rgba(0,0,0,.85);
+    width: 98%;
+    padding: 1%;
+    background: #fff;
+    border-radius: 5px;
+
+}
+
+.page .gridContainer li article div span {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+
+    width: 100%;
+    display: block;
+
+    padding: 5px 0 5px 0;
+
+    background: rgba(0,0,0,.75);
+    border-radius: 3px;
+
+}
+.page .gridContainer li article div span a {
+    color: #EF6F25;
+    text-decoration: none;
+}
+
+.page .gridContainer li article div i {
+    position: absolute;
+    padding: 2%;
+    background: rgba(239,111,37,.8);
+    text-align: center;
+    top: 2.5%;
+    right: 3%;
+    color: #fff;
+    border-radius: 3px;
+    font-style: normal;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-width: 768px) {
+    .page .gridContainer li  {
+        width: 33.3%;
+    }
+}
 
 
 /* iPads (landscape) ----------- */
@@ -322,55 +442,15 @@ header section a.ico:before {margin: 0;}
         /*Over-ride icon sprite*/
         background-image: url(../img/iconSprite_subtle_inverse.png);
     }
-}
-#launchPage.inactive {
-    position: fixed;
-    width: 100%;
-    -webkit-filter: grayscale(0.5) blur(5px);
-}
-.page {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    top: 72px;
-    left: 0;
-    z-index: 1;
+
+    .page .gridContainer li  {
+        width: 20%;
+    }
 }
 
-.page .listContainer {
-    margin: 0;
-    padding: .75% 10px 0 10px;
-    list-style: none;
-}
 
-.page .listContainer li {
-    background: rgba(0,0,0,.25);
-    border: 1px solid #000;
-    margin-bottom: 5px;
-    color: #000;
-    padding: 10px;
-}
 
-.page .listContainer li h4 {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-bottom: 1px solid #ccc;
-    font-size: 1.15em;
-    margin: 0 0 5px 0;
-    padding: 0;
-    color: #fff;
-}
-.page .listContainer li p {
-    margin: 0;
-    padding: 0;
-    font-family: Helvetica, verdana, sans-serif;
-    font-size: 1em;
-    line-height: 1.5em;
-    color: #fff;
-}
+
 
 
 
