@@ -1,6 +1,6 @@
 /* ##############################################
 Author: Michael Edelnant
-Course: AVF 1306 | Week 1
+Course: AVF 1306 | Week 2
 Instructor: Jennifer McCarrick
 ############################################## */
 
