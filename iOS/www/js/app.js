@@ -6,8 +6,12 @@ Instructor: Jennifer McCarrick
 
 
 // http://api.espn.com/v1/sports/basketball/nba/news/headlines?_accept=text/xml&limit=5&apikey=:yourkey
+document.addEventListener("deviceready", onDeviceReady, false);
 
-$(document).ready(function() {
+//wait for device to signal ready
+function onDeviceReady() {
+// $(document).ready(function() {	
+	
 	//home btn actions
 	$('#homeBtn').on('click', function(){
 		if($('.page').attr('id') === 'researchPage') {
@@ -153,4 +157,4 @@ $(document).ready(function() {
 
 	});
 
-});
+};

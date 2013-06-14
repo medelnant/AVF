@@ -402,8 +402,9 @@ header section a.ico:before {margin: 0;}
     padding: 0;    
 }
 #researchPage article p {
+    font-family: Helvetica, verdana, arial, sans-serif;
+    font-size: 1em;
     color: #515151;
-    font-size: 15px;
     margin: 10px 0;
     padding: 0;
     line-height: 20px; 
