@@ -6,7 +6,6 @@ Instructor: Jennifer McCarrick
 
 
 // http://api.espn.com/v1/sports/basketball/nba/news/headlines?_accept=text/xml&limit=5&apikey=:yourkey
-document.addEventListener("deviceready", onDeviceReady, false);
 
 //wait for device to signal ready
 function onDeviceReady() {
@@ -97,7 +96,7 @@ function onDeviceReady() {
 						'</section>' +
 						'<ul class="listContainer"></ul>' +                            
 					'</section>'
-				).appendTo(appWrapper);
+				).appendTo($('#appWrapper'));
 				
 				// call data api and build
 				$.ajax({
@@ -112,8 +111,8 @@ function onDeviceReady() {
 						// For each headlines returned
 						$.each(dataObj.headlines, function(index, story) {
 							console.log(story.headline);
-							console.log(story.description)
-							console.log("--")
+							console.log(story.description);
+							console.log("--");
 							$('' + 
 								'<li>' +
 									'<article>' +
@@ -154,7 +153,7 @@ function onDeviceReady() {
 			default:
 			// code to be executed if n is different from case 1 and 2
 		}
-
 	});
-
 };
+
+document.addEventListener("deviceready", onDeviceReady, false);
