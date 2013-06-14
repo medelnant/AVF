@@ -254,14 +254,15 @@ header section a.ico:before {margin: 0;}
 }
 
 .page .listContainer li {
+    margin-bottom: 3px;
+}
+
+.page .listContainer li article div {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(88%,rgba(229,229,229,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 88%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
-
-    margin-bottom: 0;
     
     border-top: 1px solid orange;
     border-bottom: 1px solid #fff;
-    
     box-shadow: 0 50px 10px rgba(0,0,0,1);
     overflow: hidden;
 }
@@ -327,7 +328,7 @@ header section a.ico:before {margin: 0;}
 .page .gridContainer article div img {
     box-shadow: 0 0 5px rgba(0,0,0,.85);
     width: 98%;
-    padding: 1%;
+    padding: 1.8%;
     background: #fff;
     border-radius: 5px;
 
@@ -350,6 +351,7 @@ header section a.ico:before {margin: 0;}
     border-radius: 3px;
 
 }
+
 .page .gridContainer li article div span a {
     color: #EF6F25;
     text-decoration: none;
@@ -373,7 +375,41 @@ header section a.ico:before {margin: 0;}
     box-shadow: 0 0 5px rgba(0,0,0,.5);
 }
 
-/* iPads (landscape) ----------- */
+#researchPage {display: none;}
+#researchPage article {
+    background: url(../img/textured_paper.jpg);
+    height: 100%;
+    padding: 20px 20px;
+}
+#researchPage article h2 {
+    font-family: 'Kameron', serif;
+    font-size: 2em;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #EF6F25;
+    border-bottom: 1px dotted #ccc; 
+    text-shadow: 0 2px 0 rgba(255,255,255,1);   
+}
+#researchPage article h5 {
+    font-family: 'Kameron', serif;
+    font-size: 1.25em;
+    font-weight: normal;
+    text-transform: capitalize;
+    color: #EF6F25;
+    text-shadow: 0 2px 0 rgba(255,255,255,1);    
+    overflow: hidden;
+    margin: 0 0 10px 0;
+    padding: 0;    
+}
+#researchPage article p {
+    color: #515151;
+    font-size: 15px;
+    margin: 10px 0;
+    padding: 0;
+    line-height: 20px; 
+}
+
+/* iPad (portrait) ----------- */
 @media only screen and (min-width: 768px) {
     .page .gridContainer li  {
         width: 33.3%;
@@ -381,10 +417,36 @@ header section a.ico:before {margin: 0;}
     .page .gridContainer article div img {
         padding: 1.5%;
     }
+
+    .page .listContainer {
+        padding: 2% 2% 2% 2%;
+    }
+    .page .listContainer li {
+        float: left;
+        width: 50%;
+        overflow: hidden;
+    }
+
+    .page .listContainer li article {
+        padding: 2%;
+    }
+    .page .listContainer li article div {
+        position: relative;
+        border: 1px solid #fff;
+        min-height: 150px;
+        box-shadow: 0 0 10px rgba(0,0,0,1);
+        border-radius: 5px;
+
+    }
+    .page .listContainer li article div a.more {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
 }
 
 
-/* iPads (landscape) ----------- */
+/* iPad (landscape) ----------- */
 @media only screen and (min-width: 1024px) {
     header section div#avatar span {
         /*Over-ride avatar img*/
@@ -445,6 +507,16 @@ header section a.ico:before {margin: 0;}
 
     .page .gridContainer article div img {
         padding: 2%;
+    }
+
+    .page .listContainer li {
+        float: left;
+        width: 33.3%;
+        overflow: hidden;
+    }
+    .page .listContainer li article div {
+        min-height: 200px;
+
     }
 }
 

@@ -8,21 +8,37 @@ Instructor: Jennifer McCarrick
 // http://api.espn.com/v1/sports/basketball/nba/news/headlines?_accept=text/xml&limit=5&apikey=:yourkey
 
 $(document).ready(function() {
-	var apiPath = "http://api.espn.com/v1/sports/news/headlines";
-	var appWrapper =$('#appWrapper');
-	
+	//home btn actions
 	$('#homeBtn').on('click', function(){
-		$('.page').remove();
+		if($('.page').attr('id') === 'researchPage') {
+			$('.page').hide();
+		} else {
+			$('.page').remove();
+		}
+		
+		//Destroy Scrim
 		$('.scrim').remove();
+
+		//Reset Launch Page and remove blur
 		$('#launchPage').removeClass('inactive');
 	});
 	
+	
+	// If any of the navigation items are clicked
 	$('#launchPage ul li a').on('click', function(){
+		
+		// listen for the data attribute and execute
 		switch($(this).attr("data-section")) {
+			
 			case "video":
 				break;
+			
 			case "instagram":
+
+				// set class on launchPage to init blur 
 				$('#launchPage').addClass('inactive');
+				
+				// append masthead markup with page title
 				$('' +
 					'<div class="scrim"></div>' +
 					'<section class="page" id="instagram">' +
@@ -31,16 +47,17 @@ $(document).ready(function() {
 						'</section>' +
 						'<ul class="gridContainer"></ul>' +                            
 					'</section>'
-				).appendTo(appWrapper)
+				).appendTo($('#appWrapper'));
 
+				// call data api and build
 				$.ajax({
 					url: "https://api.instagram.com/v1/tags/searstower/media/recent?callback=&amp=&client_id=c4bbe8fde6634c99840a3a1249435e91",
 					dataType: "jsonp",
 					success: function(dataObj) {
 						// console.log(dataObj.data)
+						
+						// For each post/image returned
 						$.each(dataObj.data, function(index, item) {
-							console.log(item);
-							console.log("------")
 							$('' +
 								'<li>' +
 									'<article>' +
@@ -49,8 +66,9 @@ $(document).ready(function() {
 											'<i>'+ item.likes.count +'  ♥ </i>' +
 											'<span>' +
 												'<a href="http://www.instagram.com/'+ item.user.username +'" target="_system">' +
-													'<strong>'+ item.user.username +'<strong></span>' +
+													item.user.username +
 												'</a>' +
+											'</span>' +
 										'</div>' +
 									'</article>' +
 								'</li>'
@@ -59,10 +77,14 @@ $(document).ready(function() {
 					}
 				});
 
-			  	break;
+			break;
+			
 			case "espn":
-			  	//alert('espn!')
+			  	
+			  	// set class on launchPage to init blur
 				$('#launchPage').addClass('inactive');
+
+				// append masthead markup with page title
 				$('' +
 					'<div class="scrim"></div>' +
 					'<section class="page" id="espnNews">' +
@@ -73,6 +95,7 @@ $(document).ready(function() {
 					'</section>'
 				).appendTo(appWrapper);
 				
+				// call data api and build
 				$.ajax({
 					url: "http://api.espn.com/v1/sports/hockey/nhl/teams/4/news",
 					data: {
@@ -81,36 +104,51 @@ $(document).ready(function() {
 					},
 					dataType: "jsonp",
 					success: function(dataObj) {
+						
+						// For each headlines returned
 						$.each(dataObj.headlines, function(index, story) {
 							console.log(story.headline);
 							console.log(story.description)
 							console.log("--")
 							$('' + 
 								'<li>' +
-									'<h4>' + story.headline + '</h4>' +
-									'<p>' + story.description + '</p>' +
-									'<a href="'+ story.links.web +'" class="more" target="_blank">' +
-										'Read More' +
-									'</a>' +
+									'<article>' +
+										'<div>' +
+											'<h4>' + story.headline + '</h4>' +
+											'<p>' + story.description + '</p>' +
+											'<a href="'+ story.links.web +'" class="more" target="_blank">' +
+												'Read More' +
+											'</a>' +
+										'</div>' +
+									'</article>' +
 								'</li>'
 							).appendTo($('#espnNews .listContainer'));
 						});				
 					}
 				});	
 
-			  break;
-				case "camera":
-			  break;
-				case "accelerometer":
-			  break;
-				case "compass":
-			  break;
-				case "geolocation":
-			  break;
-				case "research":
-			  break;		  		  		  		  		  		
-				default:
-		  		// code to be executed if n is different from case 1 and 2
+			break;
+			case "camera":
+			break;
+			case "accelerometer":
+			break;
+			case "compass":
+			break;
+			case "geolocation":
+			break;
+				
+			case "research":
+				// set class on launchPage to init blur 
+				$('#launchPage').addClass('inactive');
+
+				// append scrim markup
+				$('<div class="scrim"></div>').appendTo($('#appWrapper'));					
+				
+				//Toggle Show page
+				$('#researchPage').show();
+			break;		  		  		  		  		  		
+			default:
+			// code to be executed if n is different from case 1 and 2
 		}
 
 	});
