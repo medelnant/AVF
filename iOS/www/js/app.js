@@ -8,8 +8,8 @@ Instructor: Jennifer McCarrick
 // http://api.espn.com/v1/sports/basketball/nba/news/headlines?_accept=text/xml&limit=5&apikey=:yourkey
 
 //wait for device to signal ready
-function onDeviceReady() {
-// $(document).ready(function() {	
+// function onDeviceReady() {
+$(document).ready(function() {	
 	
 	//home btn actions
 	$('#homeBtn').on('click', function(){
@@ -154,6 +154,6 @@ function onDeviceReady() {
 			// code to be executed if n is different from case 1 and 2
 		}
 	});
-};
+});
 
-document.addEventListener("deviceready", onDeviceReady, false);
+// document.addEventListener("deviceready", onDeviceReady, false);
