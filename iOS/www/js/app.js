@@ -1,30 +1,25 @@
 /* ##############################################
 Author: Michael Edelnant
-Course: AVF 1306 | Week 2
+Course: AVF 1306 | Week 3
 Instructor: Jennifer McCarrick
 ############################################## */
 
 
-// http://api.espn.com/v1/sports/basketball/nba/news/headlines?_accept=text/xml&limit=5&apikey=:yourkey
-
-//wait for device to signal ready
-
-
+//WatchID placeholders for NativeAPI's
 var compassInit = '';
 var accelerometerInit = '';
 
 
 function onDeviceReady() {
-//$(document).ready(function() {
 	
 	/*########################################################
 	Connection API : Check status of network connection
 	########################################################*/
 	
-	//	var net = navigator.connection.type;
-	//	if(net == "none") {
-	//		$("#alertBanner").css("display","block");
-	//	}
+	var net = navigator.connection.type;
+	if(net == "none") {
+		$("#alertBanner").css("display","block");
+	}
 	
 	/*########################################################
 	End Connection API
@@ -46,7 +41,6 @@ function onDeviceReady() {
 			navigator.compass.clearWatch(compassInit);
 		}
 
-
 	});
 	
 	
@@ -56,6 +50,10 @@ function onDeviceReady() {
 		// listen for the data attribute and execute
 		switch($(this).attr("data-section")) {
 			
+			
+			/*########################################################
+			Video Requirement
+			########################################################*/
 			case "video":
 				setPageHeader('video','Vimeo Video');
 				$('' +
@@ -69,6 +67,9 @@ function onDeviceReady() {
 				).appendTo($('#video'));
 				break;
 			
+			/*########################################################
+			Instagram API Requirement
+			########################################################*/
 			case "instagram":
 				setPageHeader('instagram', 'Sears Tower Photos');
 				$('#instagram').append('<ul class="gridContainer"></ul>');
@@ -103,6 +104,9 @@ function onDeviceReady() {
 
 			break;
 			
+			/*########################################################
+			ESPN API 
+			########################################################*/			
 			case "espn":
 				setPageHeader('espn', 'Sears Tower Photos');
 				$('#espn').append('<ul class="listContainer"></ul>');
@@ -140,6 +144,10 @@ function onDeviceReady() {
 				});	
 
 			break;
+			
+			/*########################################################
+			Camera API 
+			########################################################*/
 			case "camera":
 
 				setPageHeader('camera', 'Camera');
@@ -151,10 +159,6 @@ function onDeviceReady() {
 							'<div class="btn btn_fullWidth" id="cameraBtn">Take Photo</div>' +
 						'</article>' 
 				).appendTo($('#camera'));
-
-			
-
-
 
 				var cameraOptions = {
 					quality: 50, 
@@ -175,9 +179,11 @@ function onDeviceReady() {
 					alert('Failed because: ' + message);
 				}
 
-					
-
 			break;
+			
+			/*########################################################
+			Accelerometer API 
+			########################################################*/
 			case "accelerometer":
 
 				setPageHeader('accelerometer', 'Accelerometer');
@@ -217,6 +223,10 @@ function onDeviceReady() {
 				}									
 
 			break;
+			
+			/*########################################################
+			Compass API 
+			########################################################*/
 			case "compass":
 				setPageHeader('compassPage', 'Compass');
 				$('' +
@@ -244,6 +254,10 @@ function onDeviceReady() {
 						
 			
 			break;
+			
+			/*########################################################
+			Geolocation API 
+			########################################################*/
 			case "geolocation":
 
 				setPageHeader('geolocation', 'Geolocation');
@@ -299,6 +313,9 @@ function onDeviceReady() {
 
 			break;
 				
+			/*########################################################
+			Research API 
+			########################################################*/			
 			case "research":
 				// set class on launchPage to init blur 
 				$('#launchPage').addClass('inactive');
@@ -316,6 +333,9 @@ function onDeviceReady() {
 }
 
 
+/*########################################################
+Research Tabs 
+########################################################*/
 $('#researchPage li a').on('click', function(){
 	$('.researchSection').hide();
 
@@ -331,10 +351,11 @@ $('#researchPage li a').on('click', function(){
 		break;
 		default:	
 	}
-
 });
 
-
+/*########################################################
+Utility Function used by all sections
+########################################################*/
 var setPageHeader = function(section, title) {
 	// set class on launchPage to init blur 
 	$('#launchPage').addClass('inactive');
@@ -350,7 +371,7 @@ var setPageHeader = function(section, title) {
 	).appendTo($('#appWrapper'));	
 };
 
-
+//wait for device to signal ready
 document.addEventListener("deviceready", onDeviceReady, false);
 
 

@@ -1,6 +1,6 @@
 /* ##############################################
 Author: Michael Edelnant
-Course: AVF 1306 | Week 2
+Course: AVF 1306 | Week 3
 Instructor: Jennifer McCarrick
 ############################################## */
 
@@ -33,12 +33,9 @@ body {
     width:100%;
 }
 
-
-a,
-a:link,
-a:visited {color: #fff;}
-
-/*ICO Sprites*/
+/*####################################################
+Sprite Icons
+####################################################*/
 .ico:before {
     content:'';
     height: 35px;
@@ -48,7 +45,22 @@ a:visited {color: #fff;}
     background: url(../img/iconSprite.png);
 }
 
+.ico.home:before {background-position: 315px -8px;}
+.ico.settings:before {background-position: 270px -8px;}
+.ico.video:before {background-position: 225px -8px;}
+.ico.twitter:before {background-position: 180px -8px;}
+.ico.espn:before {background-position: 135px -8px;}
+.ico.camera:before {background-position: 270px -54px;}
+.ico.accelerometer:before {background-position: 225px -53px;}
+.ico.compass:before {background-position: 315px -53px;}
+.ico.geolocation:before {background-position: 90px -10px;}
+.ico.research:before {background-position: 45px -8px;}
 
+
+
+/*####################################################
+Global Btns
+####################################################*/
 .btn {
     
     -moz-box-shadow:inset 0px 1px 0px 0px #54a3f7;
@@ -91,17 +103,12 @@ a:visited {color: #fff;}
     display: block;
 }
 
-
-.ico.home:before {background-position: 315px -8px;}
-.ico.settings:before {background-position: 270px -8px;}
-.ico.video:before {background-position: 225px -8px;}
-.ico.twitter:before {background-position: 180px -8px;}
-.ico.espn:before {background-position: 135px -8px;}
-.ico.camera:before {background-position: 270px -54px;}
-.ico.accelerometer:before {background-position: 225px -53px;}
-.ico.compass:before {background-position: 315px -53px;}
-.ico.geolocation:before {background-position: 90px -10px;}
-.ico.research:before {background-position: 45px -8px;}
+/*####################################################
+Global Elements
+####################################################*/
+a,
+a:link,
+a:visited {color: #fff;}
 
 .scrim {
     height: 100%;
@@ -111,6 +118,68 @@ a:visited {color: #fff;}
 
 }
 
+#launchPage.inactive {
+    position: fixed;
+    width: 100%;
+    -webkit-filter: grayscale(0.5) blur(5px);
+}
+.page,
+.staticPage {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0;
+    z-index: 1;
+}
+
+ul.tabList {
+    margin: 0 0 10px 0;
+    padding: 10px 0 10px 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+ul.tabList li {
+    float: left;
+    width: 33.3333%;
+}
+
+ul.formList {
+    margin: 0 auto 10px auto;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    overflow: hidden;
+}
+ul.formList li {
+    text-align: center;
+}
+
+ul.formList label {
+    display: inline-block;
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #EF6F25;
+    font-weight: bold;
+    text-align:  right;
+    margin: 0 10px 0 0;
+    text-shadow: 0 2px 0 rgba(255,255,255,1); 
+}
+ul.formList input[type="text"] {
+    font-family: 'Quicksand', sans-serif;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid #cfcfcf;
+    font-size: 15px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,.15);
+}
+
+/*####################################################
+Header
+####################################################*/
 header {
     position: fixed;
     top: 0;
@@ -127,18 +196,9 @@ header {
                 0 5px 10px rgba(0,0,0,.5);  
 }
 
-header section {
-    position: relative;
-    
-    height: 100%;
-    
-    border-bottom: 1px solid #EF6F25;
-    text-align: center;
-}
-
+header section {position: relative;height: 100%;border-bottom: 1px solid #EF6F25;text-align: center;}
 header section a {margin: -5px 0 0 0;}
 header section a.ico:before {background-image : url(../img/icons_inverse.png);}
-
 header section div#avatar {
     position: absolute;
     bottom:-55px;
@@ -172,6 +232,14 @@ header section div#avatar span {
     box-shadow: inset 0 0 20px rgba(0,0,0,1);       
 }
 
+header section a.ico {display: block;position: absolute;top: 20px;}
+header section a.ico.left {left: 10px;}
+header section a.ico.right {right: 10px;}
+header section a.ico:before {margin: 0;}
+
+/*####################################################
+Avatar Masthead
+####################################################*/
 section.appTitleMastHead {
     font-family: 'Quicksand', sans-serif;
     
@@ -213,6 +281,9 @@ section.appTitleMastHead h1 span {
         
 }
 
+/*####################################################
+Index Page unique contentBody
+####################################################*/
 .contentBody {
     height: 100%;
 
@@ -262,47 +333,13 @@ section.appTitleMastHead h1 span {
 
     padding: 5px 10px 5px 10px;
 }
-header section a.ico {
-    display: block;
-    position: absolute;
-    top: 20px;
-}
-header section a.ico.left {left: 10px;}
-header section a.ico.right {right: 10px;}
-header section a.ico:before {margin: 0;}
 
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
-}
 
-#launchPage.inactive {
-    position: fixed;
-    width: 100%;
-    -webkit-filter: grayscale(0.5) blur(5px);
-}
-.page,
-.staticPage {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: auto;
-    left: 0;
-    z-index: 1;
-}
 
+
+/*####################################################
+.page listContainer unique
+####################################################*/
 .page .listContainer {
     margin: 0;
     padding: 0;
@@ -361,6 +398,9 @@ header section a.ico:before {margin: 0;}
     padding: 5px 20px 10px 20px;
 }
 
+/*####################################################
+.page gridContainer unique
+####################################################*/
 .page .gridContainer {
     margin: 0;
     padding: 2% 2% 0 2%;
@@ -432,6 +472,31 @@ header section a.ico:before {margin: 0;}
     box-shadow: 0 0 5px rgba(0,0,0,.5);
 }
 
+/*####################################################
+Global Page issue with forcing height
+####################################################*/
+#geolocation,
+#compassPage,
+#accelerometer,
+#camera,
+#researchPage {
+    height: 100% !important;
+}
+
+#researchPage article,
+#geolocation article,
+#compassPage article,
+#accelerometer article,
+#camera article,
+#researchPage article {
+    background: url(../img/textured_paper.jpg);
+    height: 100%;
+    padding: 20px 20px;
+}
+
+/*####################################################
+Research Page Specific
+####################################################*/
 #researchPage {display: none;}
 #researchPage .researchBody {
     height: 100%;
@@ -439,18 +504,6 @@ header section a.ico:before {margin: 0;}
 #researchPage #researchWeek3,
 #researchPage #researchWeek4 {
     display: none;
-}
-
-ul.tabList {
-    margin: 0 0 10px 0;
-    padding: 10px 0 10px 0;
-    list-style: none;
-    overflow: hidden;
-}
-
-ul.tabList li {
-    float: left;
-    width: 33.3333%;
 }
 
 #researchPage ul.tabList li a {
@@ -494,7 +547,9 @@ ul.tabList li {
     line-height: 20px; 
 }
 
-
+/*####################################################
+Geolocation Specific
+####################################################*/
 #geolocation #map {
 	display: block;
     width: auto;
@@ -505,6 +560,10 @@ ul.tabList li {
     margin: 0 0 10px 0;
 }
 
+
+/*####################################################
+Compass Specific
+####################################################*/
 #compass {
     width: 276px;
     height: 271px;
@@ -522,6 +581,9 @@ ul.tabList li {
     background-size: cover;
 }
 
+/*####################################################
+Camera Specific
+####################################################*/
 #cameraBtn {
 
 }
@@ -535,38 +597,10 @@ ul.tabList li {
 }
 
 
-ul.formList {
-    margin: 0 auto 10px auto;
-    padding: 0;
-    list-style: none;
-    position: relative;
-    overflow: hidden;
-}
-ul.formList li {
-    text-align: center;
-}
 
-ul.formList label {
-    display: inline-block;
-    font-family: 'Quicksand', sans-serif;
-    text-transform: uppercase;
-    font-size: 15px;
-    color: #EF6F25;
-    font-weight: bold;
-    text-align:  right;
-    margin: 0 10px 0 0;
-    text-shadow: 0 2px 0 rgba(255,255,255,1); 
-}
-ul.formList input[type="text"] {
-    font-family: 'Quicksand', sans-serif;
-    padding: 5px 10px;
-    font-weight: bold;
-    border-radius: 10px;
-    border: 1px solid #cfcfcf;
-    font-size: 15px;
-    box-shadow: inset 0 0 5px rgba(0,0,0,.15);
-}
-
+/*####################################################
+Accelerometer Specific
+####################################################*/
 #accelerometer ul.formList {
     width: auto;
     margin: 0 auto;
@@ -579,6 +613,10 @@ ul.formList input[type="text"] {
     min-width: auto;
 }
 
+
+/*####################################################
+Video Specific
+####################################################*/
 #videoPlaceHolder {
     background: transparent;
     padding: 2%;
@@ -592,27 +630,12 @@ ul.formList input[type="text"] {
     height:180px;    
 }
 
-#geolocation,
-#compassPage,
-#accelerometer,
-#camera,
-#researchPage {
-    height: 100% !important;
-}
-
-#researchPage article,
-#geolocation article,
-#compassPage article,
-#accelerometer article,
-#camera article,
-#researchPage article {
-    background: url(../img/textured_paper.jpg);
-    height: 100%;
-    padding: 20px 20px;
-}
 
 
-/* iPad (portrait) ----------- */
+
+/*####################################################
+Media Query: iPad Portrait;
+####################################################*/
 @media only screen and (min-width: 768px) {
     .page .gridContainer li  {
         width: 33.3%;
@@ -658,7 +681,9 @@ ul.formList input[type="text"] {
 }
 
 
-/* iPad (landscape) ----------- */
+/*####################################################
+Media Query: iPad Landscape;
+####################################################*/
 @media only screen and (min-width: 1024px) {
     header section div#avatar span {
         /*Over-ride avatar img*/
@@ -708,54 +733,26 @@ ul.formList input[type="text"] {
                     0 3px 0 rgba(255,255,255,1);
         
     }
-    .contentBody ul li a.ico:before {
-        /*Over-ride icon sprite*/
-        background-image: url(../img/iconSprite_subtle_inverse.png);
-    }
 
-    .page .gridContainer li  {
-        width: 20%;
-    }
+    /*Over-ride icon sprite*/
+    .contentBody ul li a.ico:before {background-image: url(../img/iconSprite_subtle_inverse.png);}
 
-    .page .gridContainer article div img {
-        padding: 2%;
-    }
+    .page .gridContainer li  {width: 20%;}
+    .page .gridContainer article div img {padding: 2%;}
+    
+    .page .listContainer li {float: left;width: 33.3%;overflow: hidden;}
+    .page .listContainer li article div {min-height: 200px;}
 
-    .page .listContainer li {
-        float: left;
-        width: 33.3%;
-        overflow: hidden;
-    }
-    .page .listContainer li article div {
-        min-height: 200px;
-
-    }
-	
-	#geolocation #map {
-		height: 55%;
-        overflow: hidden;
-	}
-
-    #camera {
-        height: auto !important;
-    }
+    #camera {height: auto !important;}
 
     ul.formList label,
-    ul.formList input[type='text'] {
-        font-size: 25px;
-    }
-    #geolocation ul.formList label {
-        width: 175px;
-    }
+    ul.formList input[type='text'] {font-size: 25px;}
 
-    #videoPlaceHolder video {
-        display: block;
-        border: 5px solid #EF6F25;
-        margin: 20px auto;
-        box-shadow: 0 0 10px rgba(0,0,0,1);
-        width:800px; 
-        height:450px;    
-    }
+    #geolocation #map {height: 55%;overflow: hidden;}
+    #geolocation ul.formList label {width: 175px;}
+    
+
+    #videoPlaceHolder video {width:800px; height:450px;}
 
 
 }
