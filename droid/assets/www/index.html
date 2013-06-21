@@ -11,7 +11,9 @@ Instructor: Jennifer McCarrick
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/app.css" />
+        <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />        
         <title>Michael Edelnant | AVF 1306</title>
+
     </head>
     <body>
         <section id="appWrapper">
@@ -26,7 +28,8 @@ Instructor: Jennifer McCarrick
                 <section class="appTitleMastHead">
                     <h1><span>Michael Edelnant | AVF 1306</span></h1>
                 </section>              
-                <section class="contentBody">              
+                <section class="contentBody">
+                    <div id="alertBanner">Network Connection Not Found</div>            
                     <ul>
                         <li><a class="ico video" data-section="video" href="#">Video</a></li>
                         <li><a class="ico twitter" data-section="instagram" href="#">Instagram</a></li>
@@ -41,60 +44,156 @@ Instructor: Jennifer McCarrick
                 <footer>
                 </footer>
             </section>
-            <section class="page" id="researchPage">
+            <section class="staticPage" id="researchPage">
                 <section class="appTitleMastHead">
                     <h1><span>Research</span></h1>
                 </section>              
                 <section class="researchBody">              
                     <article>
-                        <h2>Week 2</h2>
-                        <h5>
-                            Less obvious perks of using 'live' data resources include logins and payments. How could Twitter be used in these two scenarios?
-                        </h5>
-                        <p>
-                            Utilizing Twitter for login/payments can help convey a seamless process by leveraging existing data. An example would be to consider “Login with Twitter” which if used correctly, can replicate existing data from the service to store for our own records. This eliminates the redundancy of having to enter information more than once. We can also personalize the experience by incorporating some of the media and maybe pulling back associated testimonial tweets that are relevant to the service that they are signing up for.  Lastly, as stated in other posts, the same information can be repurposed for payment details. At that point, the user would just have provided their payment method of choice.
-                        </p>
-                        <h5>
-                            Visit Programmableweb.com and search for JSON-P data sources. Why would we need JSON-P, specifically? 
-                        </h5>
-                        <p>
-                            To have the ability to send data over multiple domains or also referred to as cross-domain.  Scripts tags have the ability to bypass the cross-domain limitations, so essentially json-p is wrapping an object response in the form of a callback of function.
-                        </p>
-                        <h5>
-                            Based on the JSON-P search results: what data resource(s) do you think might pair well with which types of Native device features?                            
-                        </h5>
-                        <p>
-                            I believe that any data-source can somehow be integrated with most native features. Aside from notifications which seem to be an obvious choice, mash-ups with geo-location and usage of Google Maps and a social network have seemed to be a good formula for a successful app. Expanding upon that concept, add a photo service like Instagram and tie in the devices camera to share/post your own photos while browsing photo’s that have been snapped nearby. Nothing new here, but just observing what’s been done in the past.                            
-                        </p>
-                        <h5>
-                            Please describe any design and functionality intentions you may have for your Demo app components this month.                            
-                        </h5>
-                        <p>
-                            After doing a little research on the ESPN API’s, it seems like the only ability I have, as a public user, is to pull headlines and potentially link to stories. Since I’m representing Chicago, my plan is to pull Blackhawk related headlines into my app.                         
-                        </p>
-                        <p>
-                            As far as Twitter goes, I plan to stick to the basics. If I focus on the creative or somehow wanting to differentiate too much, I end up losing sight simple requirements         
-                        </p>
-                        <h5>
-                            Briefly describe some past 'lessons learned' regarding workflow as it relates to research, design, development, etc.
-                        </h5>
-                        <p>
-                            I’m a firm believer that every project/design needs to start with pen and paper. I usually spend the first day sketching thumbs and writing notes with no rhyme or reason as to how it’s organized. Once, I feel I’m at a good stopping point, I then start to group ideas and move on to higher fidelity sketches.
-                        </p>
-                        <p>
-                            What tends to burn me the most is when I get caught up with the overall aesthetics of the app. As mentioned earlier, I tend to lose sight of the requirements and end up having to cram the core functionality. At least the app ends up looking good though.
-                        </p>
-                        <p>
-                            As of late, to avoid getting caught up with the design, I tend to focus on building a bare bones app first. No focus on aesthetics. I create a checklist of all the requirements and manually check them off once I have integrated them into the basic prototype. Once functionality is in place, I then move on to the aesthetics. I still end up distracting myself from time to time and choose to focus on the styles.   
-                        </p>
+                        <ul class="tabList">
+                            <li><a href="#" class="btn btn_fullWidth" data-section="week2">Week 2</a></li>
+                            <li><a href="#" class="btn btn_fullWidth" data-section="week3">Week 3</a></li>
+                            <li><a href="#" class="btn btn_fullWidth" data-section="week4">Week 4</a></li>
+                        </ul>
+                        <section class="researchSection" id="researchWeek2">
+                            
+                            <dl>
+                                <lh>Week 2</lh>
+                                <dt>
+                                    <h5>
+                                        Less obvious perks of using 'live' data resources include logins and payments. How could Twitter be used in these two scenarios?                                        
+                                    </h5>
+                                    <dd>
+                                        <p>
+                                            Utilizing Twitter for login/payments can help convey a seamless process by leveraging existing data. An example would be to consider “Login with Twitter” which if used correctly, can replicate
+                                            existing data from the service to store for our own records. This eliminates the redundancy of having to enter information more than once. We can also personalize the experience by 
+                                            incorporating some of the media and maybe pulling back associated testimonial tweets that are relevant to the service that they are signing up for.  Lastly, as stated in other posts, the same 
+                                            information can be repurposed for payment details. At that point, the user would just have provided their payment method of choice.
+                                        </p>                                        
+                                    </dd>
+                                </dt>
+                                <dt>
+                                    <h5>
+                                        Visit Programmableweb.com and search for JSON-P data sources. Why would we need JSON-P, specifically?                                         
+                                    </h5>
+                                    <dd>
+                                        <p>
+                                            To have the ability to send data over multiple domains or also referred to as cross-domain.  Scripts tags have the ability to bypass the cross-domain limitations, so essentially json-p is wrapping an object response in the form of a callback of function.
+                                        </p>                                        
+                                    </dd>
+                                </dt>
+                                <dt>
+                                    <h5>
+                                        Based on the JSON-P search results: what data resource(s) do you think might pair well with which types of Native device features?                                      
+                                    </h5>
+                                    <dd>
+                                        <p>
+                                            I believe that any data-source can somehow be integrated with most native features. Aside from notifications which seem to be an obvious choice, mash-ups with geo-location and usage of Google Maps and a social network have seemed to be a good formula for a successful app. Expanding upon that concept, add a photo service like Instagram and tie in the devices camera to share/post your own photos while browsing photo’s that have been snapped nearby. Nothing new here, but just observing what’s been done in the past.
+                                        <p>                                    
+                                    </dd>
+                                </dt>
+                                <dt>
+                                    <h5>
+                                        Please describe any design and functionality intentions you may have for your Demo app components this month.                                     
+                                    </h5>
+                                    <dd>
+                                        <p>
+                                            After doing a little research on the ESPN API’s, it seems like the only ability I have, as a public user, is to pull headlines and potentially link to stories. Since I’m representing Chicago, my plan is to pull Blackhawk related headlines into my app.
+                                        </p>
+                                    </dd>
+                                </dt>
+                                <dt>
+                                    <h5>
+                                        Briefly describe some past 'lessons learned' regarding workflow as it relates to research, design, development, etc.
+                                    </h5>
+                                    <dd>
+                                        <p>
+                                            I’m a firm believer that every project/design needs to start with pen and paper. I usually spend the first day sketching thumbs and writing notes with no rhyme or reason as to how it’s organized. Once, I feel I’m at a good stopping point, I then start to group ideas and move on to higher fidelity sketches.  
+                                        </p> 
+                                        <p>
+                                            What tends to burn me the most is when I get caught up with the overall aesthetics of the app. As mentioned earlier, I tend to lose sight of the requirements and end up having to cram the core
+                                            functionality. At least the app ends up looking good though.
+                                        </p>
+                                        <p>
+                                            As of late, to avoid getting caught up with the design, I tend to focus on building a bare bones app first. No focus on aesthetics. I create a checklist of all the requirements and manually check them off once I have integrated them into the basic prototype. Once functionality is in place, I then move on to the aesthetics. I still end up distracting myself from time to time and choose to focus on the styles.   
+                                        </p>
+                                    </dd>
+                                </dt>
+                            </dl>
+                        </section>
+                        <section class="researchSection" id="researchWeek3">
+                            <dl>
+                                <lh>Week 3</lh>
+                                <dt>
+                                    <h5>
+                                        What are some of the ways that you could change your HTML on your Demo app to be more accessible? ( Remember, you can use the Section tag with jQuery, for instance)
+                                    </h5>
+                                    <dd>
+                                        <p>
+                                            Utilizing Definition Lists for specific content such as my Research section, breaking the questions down intoand the responses into. Aside from proper semantics, would also be best to consider following the ARIA specifications and implementing role attributes on elements to provide further definition/purpose for such elements/components.        
+                                        </p>
+                                    </dd>
+                                </dt>
+                                <dt>
+                                    <h5>
+                                        Visit a video service on the web (like YouTube) and search for "Screen Reader Demo" and "Mobile Screen Reader" - what are some of the common frustrations (or common support mechanisms) that you see among the examples that are given - how could you fix them (or use them)?        
+                                    </h5>
+                                    <dd>
+                                        <p>
+                                            There is a lack of proper consideration for accessibility across the majority of the sites on the web in general. The ARIA specifications that I mentioned earlier can help provide more contextual meaning to sections that lack descriptors, such as links that lack title attributes and images that lack alt attributes.            
+                                        </p>
+                                    </dd>
+                                </dt>
+                                <dt>
+                                    <h5>
+                                        Devices: Please list two devices (and some of their features) that are made specifically to support Accessibility.
+                                    </h5>
+                                    <dd>
+                                        <p>
+                                            The iPad has been noted as being one of the best accessibility devices that has come to existence. This is in part to 3rd party hardware and software that bridges the experience. Natively the iPad accounts for voiceover, which allows the end user to experience nearly every aspect of the device being read to them. Paired with a Refreshable Braille Display than can interpret text from the ipad, but also be used as a full braille keyboard.            
+                                        </p>
+                                        <p>
+                                            I’d imagine Android devices are fairly similar to the ipad. Utilizing voiceover, dictation, and 3rd party hardware allowing for the end user to be able to increasingly engage with the device. Feedback such as vibration and tone alerts can strategically be utilized as well.            
+                                        </p>
+                                    </dd>
+                                </dt>
+                                <dt>
+                                    <h5>
+                                        Mobile Apps: Please list two apps (either Android or iOS, or both) that are made specifically to support Accessibility.
+                                    </h5>
+                                    <dd>
+                                        <p>
+                                            One app that I’m particularly familiar with is LouderTV which I had downloaded for my father. It’s an application that was developed to assist hearing-impaired individuals by amplifying sound when watching tv. My Dad would watch his Cubs Games with his iPod which I had bought for him and a pair of headphones. The app seriously changed his life and brought peace to my mother.            
+                                        </p>
+                                        <p>
+                                            In addition, for being 89, my Dad was pretty savy with his iPad. I had set him up with a Netflix account which gave him access to some of his favorite old shows like Colombo and Quincy M.E.  Eventually I had purchased an Apple TV for him, in which he then was grateful to be able to watch those shows on his HD tv. Pardon the long-winded point, but he relied on the CC captioning for most of his shows and would always tell me how great of an experience it was to have that. It’s my understanding that Netflix now has near 85% of their movies/shows available with CC.            
+                                        </p>
+                                    </dd>
+                                </dt>
+                            </dl>
+                        </section>
+                        <section class="researchSection" id="researchWeek4">
+                            <dl>
+                                <lh>Week 4</lh>
+                                <dt>
+                                    <h5>Coming Soon!</h5>
+                                    <dd>
+                                        <p></p>
+                                    </dd>
+                                </dt>
+                            </dl>
+                            
+                        </section>                                                
                     </article>
                 </section>
                 <footer>
                 </footer>
             </section>
         </section>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
         <script type="text/javascript" src="cordova-2.7.0.js"></script>
         <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+       
         <script type="text/javascript" src="js/app.js"></script>
     </body>
 </html>
