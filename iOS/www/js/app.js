@@ -1,6 +1,6 @@
 /* ##############################################
 Author: Michael Edelnant
-Course: AVF 1306 | Week 3
+Course: AVF 1306 | Week 4
 Instructor: Jennifer McCarrick
 ############################################## */
 
@@ -11,15 +11,16 @@ var accelerometerInit = '';
 
 
 function onDeviceReady() {
-	
+//$(document).ready(function() {	
+
 	/*########################################################
 	Connection API : Check status of network connection
 	########################################################*/
 	
-	var net = navigator.connection.type;
-	if(net == "none") {
-		$("#alertBanner").css("display","block");
-	}
+	// var net = navigator.connection.type;
+	// if(net == "none") {
+	// $("#alertBanner").css("display","block");
+	// }
 	
 	/*########################################################
 	End Connection API
@@ -103,6 +104,74 @@ function onDeviceReady() {
 				});
 
 			break;
+
+			/*########################################################
+			Google Places Mashup
+			########################################################*/
+			case "gPlaces":
+				var lattitude = ''
+				var longitude = ''	
+
+				setPageHeader('googlePlaces', 'Google Places Mashup');
+				$('' +
+						'<section class="contentBody subPage">' +
+							'<p class="appDescription">Choose your category of nearby locations</p><br />'+
+							'<ul class="pageMenuList">' +
+								'<li><a data-section="amusement_park" href="#">Amusement</a></li>' +
+								'<li><a data-section="art_gallery" href="#">Art Galleries</a></li>' +
+								'<li><a data-section="restaurant" href="#">Restaurants</a></li>' +
+								'<li><a data-section="airport" href="#">Airports</a></li>' +
+								'<li><a data-section="gas_station" href="#">Gas Stations</a></li>' +
+								'<li><a data-section="museum" href="#">Museums</a></li>' +
+							'</ul>' +
+						'</section>' 
+				).appendTo($('#googlePlaces'));
+				
+
+				navigator.geolocation.getCurrentPosition(onGeoPlacesSuccess, onGeoPlacesError);
+				
+				function onGeoPlacesSuccess(position) {
+					lattitude = position.coords.latitude.toFixed(2);
+					longitude = position.coords.longitude.toFixed(2);						
+				}
+
+				function onGeoPlacesError(error) {
+					if( error == 1) {
+						alert('Turn on Geolocation services.');
+					}
+				}				
+
+				$('#googlePlaces .pageMenuList li a').on('click', function(){
+					$('.subPage').hide();
+					
+					var placesCategory  = $(this).attr("data-section");				
+
+					// call data api and build
+					$.ajax({
+						url: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+ lattitude +","+ longitude +"&radius=10000&types="+ placesCategory +"&sensor=false&key=AIzaSyA4LJzJqag2ooErExZmF3v0Z-DydewiC9k",
+						dataType: "json",
+						success: function(dataObj) {						
+							$('#googlePlaces').append('<article><ul class="subPageList"></ul></article>');
+							//alert(dataObj.results.length);
+							$.each(dataObj.results, function(index, location) {
+								$('' +
+									'<li>' +
+										'<h5>'+ location.name +'</h5>' +
+										'<span>' + location.vicinity + '</span>' +
+									'</li>'
+								).appendTo($('.subPageList'));
+							});	
+
+						},
+						error: function(x, y, z) {
+							alert( x + ' | ' + y + ' | ' + z);
+						}
+					});					
+															
+				});
+
+
+			break;			
 			
 			/*########################################################
 			ESPN API 
